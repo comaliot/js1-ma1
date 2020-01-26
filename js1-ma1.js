@@ -23,11 +23,11 @@ const heading = document.querySelector("h3");
 to change its font size to "2em".
 */
 
-heading.font.size = "2em";
+heading.style.fontSize = "2em";
 
 // 4. Add a class to the heading variable called subheading.
 
-div.classList.add("subheading"); // console.log(div.className); -> subheading
+heading.classList.add("subheading");
 
 /*
 5. Write code that selects all the p elements on a page
@@ -36,6 +36,10 @@ and assigns them to a variable called paragraphs.
 
 const paragraphs = document.querySelectorAll("p");
 
+for(let i = 0; i < paragraphs.length; i++) {
+    console.log(paragraph[i].innetText);
+}
+
 /*
 6. Select the div by its class from the HTML below,
 assign it to a variable called resultsContainer
@@ -43,7 +47,7 @@ and set its inner HTML to be <p>New paragraph</p>.
 */
 
 const resultsContainer = document.querySelector(".results");
-pageHeading.innerHTML = "<p>New paragraph</p>";
+resultsContainer.innerHTML = "<p>New paragraph</p>";
 
 /*
 7. Create a function that has one argument called catArray.
@@ -53,6 +57,13 @@ and console log the name property in each object.
 
 Call the function and pass in the cats variable below.
 */
+
+function catName(catsArray) {
+    for(let i = 0; i < catsArray.length; i++) {
+        console.log(catsArray[i].name);
+        console.log(catsArray[i].age);
+    }
+}
 
 const cats = [
     {
@@ -67,12 +78,6 @@ const cats = [
         age: 21
     }
 ];
-function catName(catsArray) {
-    for(let i = 0; i < catsArray.length; i++) {
-        console.log(catsArray[i].name);
-        console.log(catsArray[i].age);
-    }
-}
 
 catName(cats);
 
