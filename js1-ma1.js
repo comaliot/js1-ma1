@@ -95,7 +95,7 @@ function catName(catsArray) {
 
     for (let i = 0; i < catsArray.length; i++) {
         // add the new HTML to the existing HTML stored in catsHTML
-        catHTML += `<"h5">${catsArray[i].name}</"h5">`;
+        catHTML += `<h5>${catsArray[i].name}</h5>`;
     }
 
     // return the HTML that was created
@@ -109,15 +109,7 @@ and set the inner HTML of the resultsContainer variable
 from question 6 to the return value of the function.
 */
 
-function logName(catArray) {
-    let returnCatNames = "";
-    for (let i = 0; i < catArray.length; i++) {
-        returnCatNames += `<h5>${catArray[i].name}</h5>`;
-    }
-    return returnCatNames;
-}
-
-logName(cats);
+resultsContainer.innerHTML = catName(cats);
 
 /*
 10. Using the function from question 8,
@@ -139,10 +131,10 @@ function catName(catsArray) {
             missingAgeValue = catsArray[i].age;
         }
         // add the new HTML to the existing HTML stored in catsHTML
-        `<div>`
-            catHTML += `<h5>${catsArray[i].name}</h5>`;
-            `<p>${missingAgeValue}</p>`;
-        `</div>`
+        catHTML += `<div>
+                          <h5>${catsArray[i].name}</h5>
+                          <p>${missingAgeValue}</p>
+                   </div>`;
     }
 
     // return the HTML that was created
